@@ -22,16 +22,15 @@ generateBtn.addEventListener('click', function () {
 })
 
 function generateBlocks(columnNum, rowNum) {
-    for (let i = 0; i < rowNum; i++) {
 
-        for (let j = 0; j < columnNum; j++) {
-            let singleBlock = generateSingleBlock('single-block')
+    for (let j = 0; j < columnNum * rowNum; j++) {
+        let singleBlock = generateSingleBlock('single-block')
 
-            singleBlock.style.width = contentBlock.offsetWidth / columnNum  -2 + 'px'
-            contentBlock.appendChild(singleBlock)
-        }
+        singleBlock.style.width = contentBlock.offsetWidth / columnNum + 'px'
+        contentBlock.appendChild(singleBlock)
     }
 }
+
 
 function generateSingleBlock(className) {
     const block = document.createElement('div')
